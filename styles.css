@@ -1,8 +1,21 @@
+:root {
+    --paint-10: #aaaaaa;
+    --paint-20: #999999;
+    --paint-30: #888888;
+    --paint-40: #777777;
+    --paint-50: #666666;
+    --border-10: #999999;
+    --border-20: #888888;
+    --border-30: #777777;
+    --border-40: #666666;
+    --border-50: #555555;
+}
+
 #canvas {
     padding: 4px;
-    max-width: 750px;
+    max-width: 700px;
     aspect-ratio: 1 / 1;
-    background-color: #bbbbbb;
+    background-color: #cccccc;
 }
 
 .row {
@@ -11,12 +24,33 @@
 
 .square {
     flex: 1;
+    outline: 1px solid #cccccc;
     margin: 1px;
     aspect-ratio: 1 / 1;
-    border-radius: 4px;
-    background-color: #dddddd;
+    background-color: #dedede;
 }
 
-.square:hover {
-    background-color: black;
+.painted-10 {
+    background-color: var(--paint-10);
+    outline-color: var(--border-10)
+}
+
+.painted-20 {
+    background-color: var(--paint-20);
+    outline-color: var(--border-20)
+}
+
+.painted-30 {
+    background-color: var(--paint-30);
+    outline-color: var(--border-30)
+}
+
+.painted-40 {
+    background-color: var(--paint-40);
+    outline-color: var(--border-40)
+}
+
+.painted-50 {
+    background-color: var(--paint-50);
+    outline-color: var(--border-50)
 }
