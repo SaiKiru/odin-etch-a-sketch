@@ -1,0 +1,22 @@
+#canvas {
+    padding: 4px;
+    max-width: 750px;
+    aspect-ratio: 1 / 1;
+    background-color: #bbbbbb;
+}
+
+.row {
+    display: flex;
+}
+
+.square {
+    flex: 1;
+    margin: 1px;
+    aspect-ratio: 1 / 1;
+    border-radius: 4px;
+    background-color: #dddddd;
+}
+
+.square:hover {
+    background-color: black;
+}
