@@ -1,4 +1,5 @@
 const canvas = document.querySelector('#canvas');
+const resetButton = document.querySelector('#reset-btn');
 
 let size = 16;
 
@@ -49,8 +50,19 @@ function paint(square) {
   }
 }
 
+function resetCanvas() {
+  clearCanvas();
+  fillCanvas(size);
+}
+
+function clearCanvas() {
+  canvas.replaceChildren();
+}
+
 function initialize() {
   fillCanvas(size);
+
+  resetButton.addEventListener('click', resetCanvas);
 }
 
 initialize();
