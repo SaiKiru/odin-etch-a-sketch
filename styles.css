@@ -9,17 +9,56 @@
     --border-30: #777777;
     --border-40: #666666;
     --border-50: #555555;
+
+    --frame-color: #cf884e;
+    --frame-highlight: #f5caa3ee;
+    --frame-shade: #5a3f3f73;
+
+    --control-color: #bfc5ca;
+    --control-highlight: #fde9e967;
+    --control-shade: #50505067;
 }
 
 * {
     box-sizing: border-box;
 }
 
+html {
+    height: 100%;
+}
+
+body {
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+#sketch-frame {
+    padding: 32px;
+    width: 850px;
+    max-width: 650px;
+    border-radius: 16px;
+    background: var(--frame-color);
+    box-shadow:
+        4px 4px 8px var(--frame-highlight) inset,
+        -12px -12px 8px var(--frame-shade) inset,
+        4px 32px 128px rgb(173, 130, 143);
+}
+
 #canvas {
+    border-radius: 12px;
     padding: 4px;
-    max-width: 700px;
+    margin-inline: auto;
+    margin-block: 24px;
+    max-width: 500px;
     aspect-ratio: 1 / 1;
     background-color: #cccccc;
+    box-shadow:
+        4px 4px 8px var(--frame-highlight),
+        -8px -8px 8px var(--frame-shade);
 }
 
 .row {
@@ -57,4 +96,56 @@
 .painted-50 {
     background-color: var(--paint-50);
     outline-color: var(--border-50)
+}
+
+#controls {
+    display: flex;
+    width: 100%;
+    align-content: center;
+    justify-content: space-between;
+}
+
+#middle-controls {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#brand-name {
+    text-align: center;
+}
+
+#buttons {
+    display: flex;
+    gap: 8px;
+}
+
+#buttons button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--control-color);
+    color: #444444;
+    font-weight: bold;
+    box-shadow:
+        2px 2px 4px var(--control-highlight) inset,
+        -2px -2px 4px var(--control-shade) inset,
+        2px 2px 2px 2px var(--frame-shade);
+}
+
+#buttons button:active {
+    position: relative;
+    top: 2px;
+    box-shadow: none;
+}
+
+.dial {
+    width: 100px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50px;
+    background-color: var(--control-color);
+    box-shadow:
+        4px 4px 4px var(--control-highlight) inset,
+        -4px -4px 4px var(--control-shade) inset,
+        32px 32px 12px 8px var(--frame-shade);
 }
