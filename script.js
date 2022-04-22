@@ -1,6 +1,8 @@
 const canvas = document.querySelector('#canvas');
 
-function fillGrid(grid, size = 16) {
+let size = 16;
+
+function fillCanvas(size = 16) {
   let numSquares = size * size;
 
   for (let i = 0; i < size; i++) {
@@ -47,4 +49,8 @@ function paint(square) {
   }
 }
 
-fillGrid(canvas, 16);
+function initialize() {
+  fillCanvas(size);
+}
+
+initialize();
