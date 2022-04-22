@@ -1,4 +1,6 @@
 const canvas = document.querySelector('#canvas');
+const decSizeButton = document.querySelector('#decrease-size-btn');
+const incSizeButton = document.querySelector('#increase-size-btn');
 const resetButton = document.querySelector('#reset-btn');
 
 let size = 16;
@@ -50,6 +52,23 @@ function paint(square) {
   }
 }
 
+function resizeCanvas(new_size) {
+  if (new_size < 1) return;
+  if (new_size > 80) return;
+
+  size = new_size;
+  clearCanvas();
+  fillCanvas(size);
+}
+
+function decreaseCanvasSize() {
+  resizeCanvas(size - 1);
+}
+
+function increaseCanvasSize() {
+  resizeCanvas(size + 1);
+}
+
 function resetCanvas() {
   clearCanvas();
   fillCanvas(size);
@@ -62,6 +81,8 @@ function clearCanvas() {
 function initialize() {
   fillCanvas(size);
 
+  decSizeButton.addEventListener('click', decreaseCanvasSize);
+  incSizeButton.addEventListener('click', increaseCanvasSize);
   resetButton.addEventListener('click', resetCanvas);
 }
 
